@@ -8,9 +8,10 @@
     "test": "jest"
   },
   "dependencies": {
+    "@shopify/restyle": "^1.4.0",
     "expo": "~41.0.1",
-    "expo-updates": "~0.5.4",
     "expo-splash-screen": "~0.10.2",
+    "expo-updates": "~0.5.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "~0.63.4",
