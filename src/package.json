@@ -1,0 +1,19 @@
+{
+  "name": "startxlab-react-native-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Startxlabs/startxlabs-react-native-ui-kit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Startxlabs/startxlabs-react-native-ui-kit/issues"
+  },
+  "homepage": "https://github.com/Startxlabs/startxlabs-react-native-ui-kit#readme"
+}
