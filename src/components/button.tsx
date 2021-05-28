@@ -18,10 +18,11 @@ const Button = ({ variant, label, onPress }: ButtonProps) => {
 			: variant === "transparent"
 			? "transparent"
 			: theme.colors.secondary;
+	const color = variant === "primary" ? theme.colors.white : theme.colors.secondary;
 
 	return (
-		<TouchableOpacity style={[styles.container, { backgroundColor }]}>
-			<Text>{label}</Text>
+		<TouchableOpacity style={[styles.container, { backgroundColor }]} onPress={onPress}>
+			<Text style={[styles.label, { color }]}>{label}</Text>
 		</TouchableOpacity>
 	);
 };

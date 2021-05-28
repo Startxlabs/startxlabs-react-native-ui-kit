@@ -3,11 +3,20 @@ import { StyleSheet, Text, View } from "react-native";
 import { ThemeProvider } from "@shopify/restyle";
 
 import theme from "./src/theme";
+import { Button } from "./src";
 
 export default function App() {
 	return (
 		<ThemeProvider {...{ theme }}>
-			<Text>Components</Text>
+			<View style={{ justifyContent: "center", alignItems: "center", flex: 1 }}>
+				<Button
+					label={"Test"}
+					variant="primary"
+					onPress={() => {
+						alert("In progress");
+					}}
+				/>
+			</View>
 		</ThemeProvider>
 	);
 }
