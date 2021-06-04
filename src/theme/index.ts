@@ -1,4 +1,3 @@
-import { createText, createBox } from "@shopify/restyle";
 import colors from "../utils/colors";
 
 const theme = {

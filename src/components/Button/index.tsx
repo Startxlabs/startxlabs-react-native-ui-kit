@@ -2,22 +2,20 @@ import { useTheme } from "@shopify/restyle";
 import React from "react";
 import { TouchableOpacity, StyleSheet, Text } from "react-native";
 
-import { Theme } from "../theme";
+import { Theme } from "../../theme";
 
-interface ButtonProps {
-	variant: "primary" | "secondary" | "transparent";
-	label: string;
-	onPress: () => void;
-}
+import ButtonProp from "./type";
 
-const Button = ({ variant, label, onPress }: ButtonProps) => {
+const Button = ({ variant, label, onPress }: ButtonProp) => {
 	const theme = useTheme<Theme>();
+
 	const backgroundColor =
 		variant === "primary"
 			? theme.colors.primary
 			: variant === "transparent"
 			? "transparent"
 			: theme.colors.secondary;
+
 	const color = variant === "primary" ? theme.colors.white : theme.colors.secondary;
 
 	return (
