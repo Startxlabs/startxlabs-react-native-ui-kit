@@ -1,6 +1,6 @@
 # startxlabs-rn-kit
 
-Collection of all day to day usage UI elements for React Native.
+Collection of all day to day UI elements for React Native.
 
 ## Installation
 
