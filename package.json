@@ -6,7 +6,7 @@
     "web": "expo start --web",
     "start": "react-native start",
     "test": "jest",
-    "prepare": "husky install",
+    "prepare": "husky install && patch-package",
     "preety": "prettier --write --config .prettierrc.json App.tsx index.js **/*.{ts,tsx}",
     "analyze-code": "npm run preety"
   },
@@ -16,6 +16,7 @@
     "expo": "~41.0.1",
     "expo-splash-screen": "~0.10.2",
     "expo-updates": "~0.5.4",
+    "patch-package": "^6.4.7",
     "preety": "prettier --write --config .prettierrc.prod.json App.tsx index.js **/*.{ts,tsx}",
     "react": "16.13.1",
     "react-dom": "16.13.1",

@@ -6,7 +6,7 @@ import { Theme } from "../../theme";
 
 import ButtonProp from "./type";
 
-const Button = ({ variant, label, onPress }: ButtonProp) => {
+const Button = ({ variant, label, onPress, ...props }: ButtonProp) => {
 	const theme = useTheme<Theme>();
 
 	const backgroundColor =
@@ -19,8 +19,10 @@ const Button = ({ variant, label, onPress }: ButtonProp) => {
 	const color = variant === "primary" ? theme.colors.white : theme.colors.secondary;
 
 	return (
-		<TouchableOpacity style={[styles.container, { backgroundColor }]} onPress={onPress}>
-			<Text style={[styles.label, { color }]}>{label}</Text>
+		<TouchableOpacity
+			style={[styles.container, { backgroundColor, ...props.buttonStyle }]}
+			onPress={onPress}>
+			<Text style={[styles.label, { color, ...props.buttonTextStyle }]}>{label}</Text>
 		</TouchableOpacity>
 	);
 };

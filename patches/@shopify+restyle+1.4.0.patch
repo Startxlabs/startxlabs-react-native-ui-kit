@@ -1,0 +1,25 @@
+diff --git a/node_modules/@shopify/restyle/dist/index.d.ts b/node_modules/@shopify/restyle/dist/index.d.ts
+index 31107fc..124b922 100644
+--- a/node_modules/@shopify/restyle/dist/index.d.ts
++++ b/node_modules/@shopify/restyle/dist/index.d.ts
+@@ -6,7 +6,7 @@ export * from './createText';
+ export { default as createVariant } from './createVariant';
+ export { default as createBox } from './createBox';
+ export { default as createText } from './createText';
+-export { ThemeProvider } from './context';
++export { ThemeProvider,ThemeContext } from './context';
+ export { default as useTheme } from './hooks/useTheme';
+ export { default as useRestyle } from './hooks/useRestyle';
+ export { default as useResponsiveProp } from './hooks/useResponsiveProp';
+diff --git a/node_modules/@shopify/restyle/dist/index.js b/node_modules/@shopify/restyle/dist/index.js
+index c9a5f56..517a3d1 100644
+--- a/node_modules/@shopify/restyle/dist/index.js
++++ b/node_modules/@shopify/restyle/dist/index.js
+@@ -15,6 +15,7 @@ var createText_1 = require("./createText");
+ exports.createText = createText_1.default;
+ var context_1 = require("./context");
+ exports.ThemeProvider = context_1.ThemeProvider;
++exports.ThemeContext = context_1.ThemeContext;
+ var useTheme_1 = require("./hooks/useTheme");
+ exports.useTheme = useTheme_1.default;
+ var useRestyle_1 = require("./hooks/useRestyle");
