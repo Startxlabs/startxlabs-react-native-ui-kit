@@ -4,7 +4,7 @@ type ButtonVariant = "primary" | "secondary" | "transparent";
 
 type ButtonProp = {
 	variant: ButtonVariant;
-	label?: string;
+	label: string;
 	onPress: () => void;
 	buttonStyle?: ViewStyle;
 	buttonTextStyle?: TextStyle;
