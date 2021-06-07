@@ -3,8 +3,7 @@ import { Dimensions, StyleSheet, Text, View } from "react-native";
 import { ThemeProvider } from "@shopify/restyle";
 
 import theme from "./src/theme";
-import { Button } from "./src";
-import BottomSheet from "./src/components/BottomSheet";
+import { Button, BottomSheet } from "./src";
 import colors from "./src/utils/colors";
 
 export default function App() {
