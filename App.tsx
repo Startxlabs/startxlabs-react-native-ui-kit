@@ -3,7 +3,7 @@ import { StyleSheet, View } from "react-native";
 import { ThemeProvider } from "@shopify/restyle";
 
 import theme from "./src/theme";
-import { BottomSheetExample, ButtonExample } from "./src/examples";
+import { BottomSheetExample } from "./src/examples";
 
 export default function App() {
 	return (

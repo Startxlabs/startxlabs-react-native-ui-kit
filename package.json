@@ -6,9 +6,11 @@
     "web": "expo start --web",
     "start": "react-native start",
     "test": "jest",
+    "lint": "eslint .prettierrc.json App.tsx index.js **/*.{ts,tsx}",
+    "lint:fix": "eslint .prettierrc.json App.tsx index.js **/*.{ts,tsx} --fix",
     "prepare": "husky install && patch-package",
     "preety": "prettier --write --config .prettierrc.json App.tsx index.js **/*.{ts,tsx}",
-    "analyze-code": "npm run preety"
+    "analyze-code": "npm run preety && npm run lint:fix && npm run lint"
   },
   "dependencies": {
     "@shopify/restyle": "^1.4.0",
@@ -31,10 +33,15 @@
     "@babel/core": "^7.9.0",
     "@types/react": "~16.9.35",
     "@types/react-native": "~0.63.2",
+    "@typescript-eslint/eslint-plugin": "^4.27.0",
+    "@typescript-eslint/parser": "^4.27.0",
     "babel-preset-expo": "~8.3.0",
+    "eslint": "^7.28.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-react": "^7.24.0",
     "husky": "^6.0.0",
     "jest-expo": "~41.0.0",
-    "prettier": "^2.3.0",
+    "prettier": "^2.3.1",
     "typescript": "~4.0.0"
   },
   "jest": {
