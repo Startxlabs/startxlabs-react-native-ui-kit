@@ -125,10 +125,32 @@ const BottomTab = createBottomTabNavigator(
 
 export default BottomTab;
 
+| Props          | Type      | Description                                                |
+| :------------- | :-------- | :--------------------------------------------------------- |
+| imageObject    | Object    | **Required** This is an object containing name and paths to images in project.
+								You can create this here only or just pass images from assets as shown above. The mandatory part is, object should contain 2 images for each tab, one for active other for inactive. There should be images with  respective screen name(navigationConstants). |
+			
+| activeCurvePoints | Array<Point> |  **Required** This is array of points containing x and y. points in 									|	X-Y graph needed to create the active tab curve. Zoom the curve 								   |	in Figma, you will able to see vertical and horizontal lines at 								   |	back. intersection of those lines represents a point in 										   | 	graph. Start from curve's top left to top right.
 
-#### Understanding props
+| middleCurvePoints | Array<Point> | **Required** This is array of points containing x and y. points in 								   |	X-Y graph needed to create the Middle curve. Zoom the curve 								   	   |	in Figma, you will able to see vertical and horizontal lines at 								   |	back. intersection of those lines represents a point in 										   | 	graph. Start from curve's top left to top right.
 
-## imageObject 
+| fillColor         | string 		| **Required** Color of Bottom tab
+
+| tabLength 		| number		| **Required** Number of tabs to be shown
+
+| showDot 			| boolean       | **Required** whether to show dot above active tab curve.
+
+| dotProps		    | DotProps 		| Object containing dimention(height and width) and background color 										of dot.
+| showMiddleButton  | boolean       | **Required** whether to show middle actioon button.
+
+| middleButtonProps | MiddleButtonProps | middleButtonImage = key of image in imageObject.
+										  middleButtonDimension = dimention of button(Height and width)
+										  middleButtonClickHandler = click handler
+
+
+
+#### Extra knowledge for imageObject
+
  This is an object containing name and paths to images in project. You can create this here only or just pass images from assets as shown above. The mandatory part is, object should contain 2 images for each tab, one for active other for inactive. There should be images with  respective screen name(navigationConstants). For above example, navigationConsts are 
 
     dashboard_stack: "dashboard_stack",
@@ -150,28 +172,3 @@ export const images = {
 	profile_inactive: require("../../assets/images/bottomtabs/profile_inactive.png"),
 
 }
-
-### activeCurvePoints
-points in X-Y graph needed to create the active tab curve. Zoom the curve in Figma, you will able to see vertical and horizontal lines at back. intersection of those lines represents a point in graph. Start from curve's top left to top right.
-
-
-## middleCurvePoints
-points in X-Y graph needed to create the Middle curve. Zoom the curve in Figma, you will able to see vertical and horizontal lines at back. intersection of those lines represents a point in graph. Start from curve's top left to top right.
-
-## fillColor
-Color of Bottom tab
-
-## tabLength
-Number of tabs needed.
-
-## showDot
-whether to show dot above active tab curve.
-
-## dotProps
-dimension = height and width
-
-## showMiddleButton
-For showing middle action button
-
-## middleButtonProps
-middleButtonImage = key of image in imageObject.

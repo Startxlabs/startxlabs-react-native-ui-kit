@@ -31,4 +31,30 @@ type CurvedBottomBarProps = {
     shadowStyle?: ViewStyle;
 };
 
-export { CurvedBottomBarProps, MiddleButtonProps, Point }
+type TabsHandlerProps = {
+    routes: Array<any>;
+    tabWidth: number;
+    onTabPress: Function,
+    index: number;
+    imageObject: Object;
+    activeCurveRadius: number;
+    middleCurveRadius: number;
+    showDot: boolean;
+    dotProps?: DotProps;
+    showMiddleButton: boolean;
+    middleButtonProps?: MiddleButtonProps;
+
+}
+
+type TabsShapeProps = {
+    tabWidth: number;
+    index: number;
+    activeCurvePoints: Array<Point>;
+    middleCurvePoints: Array<Point>;
+    shadowStyle?: ViewStyle;
+    activeCurveRadius: number;
+    middleCurveRadius: number;
+    fillColor: string
+}
+
+export { CurvedBottomBarProps, TabsHandlerProps, TabsShapeProps, MiddleButtonProps, Point };

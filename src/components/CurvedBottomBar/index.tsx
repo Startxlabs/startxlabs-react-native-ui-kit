@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { View, TouchableOpacity, StyleSheet, Image, Dimensions } from "react-native";
-import { CurvedBottomBarProps, Point } from './types'
+import { CurvedBottomBarProps, TabsHandlerProps, TabsShapeProps, Point } from './types'
 import { Svg, Path } from "react-native-svg";
 import * as shape from "d3-shape";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -17,8 +17,9 @@ function TabsShape({
 	activeCurveRadius,
 	middleCurveRadius,
 	fillColor,
-}: any) {
-	const d = useMemo(() => {
+}: TabsShapeProps) {
+
+	const points = useMemo(() => {
 		const start =
 			tabWidth / 2 -
 			activeCurveRadius +
@@ -76,7 +77,7 @@ function TabsShape({
 	// logOnConsole(d);
 	return (
 		<Svg width={TAB_WIDTH} {...{ height: NAVIGATION_BOTTOM_TABS_HEIGHT }} style={shadowStyle}>
-			<Path fill={fillColor} {...{ d }} />
+			<Path fill={fillColor} {...{ d: points }} />
 		</Svg>
 	);
 }
@@ -93,7 +94,7 @@ function TabsHandler({
 	dotProps,
 	showMiddleButton,
 	middleButtonProps
-}: any) {
+}: TabsHandlerProps) {
 
 	function getIcon(tab: any) {
 		// console.log(index, routes)
@@ -131,7 +132,7 @@ function TabsHandler({
 									width: middleCurveRadius * 2,
 									height: NAVIGATION_BOTTOM_TABS_HEIGHT,
 								}}
-								key="logo"
+								key={`${tab.key}`}
 							/>
 						);
 					}
@@ -139,7 +140,7 @@ function TabsHandler({
 						<>
 							{showDot && renderActiveDot(tab) ? (
 								<View
-									// style,
+									key={`${tab.key}`}
 									style={[
 										{
 											width: dotProps.dimention,
@@ -159,7 +160,7 @@ function TabsHandler({
 								/>
 							) : null}
 							<TouchableOpacity
-								{...{ key }}
+								key={`${tab.key}`}
 								style={{ elevation: 45 }}
 								onPress={() => {
 									onTabPress({ route: routes[key] });
